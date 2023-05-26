@@ -4,6 +4,7 @@ import ContactForm from './ContactForm/ContactForm';
 import ContactList from './ContactList/ContactList';
 import Filter from './Filter/Filter';
 import Footer from './Footer/Footer';
+import { Wraper } from './App.styled';
 
 export class App extends Component {
   state = {
@@ -65,7 +66,7 @@ export class App extends Component {
     );
 
     return (
-      <div>
+      <Wraper>
         <h1>Phonebook</h1>
         <ContactForm contacts={contacts} onAddContact={this.handleAddContact} />
 
@@ -76,7 +77,7 @@ export class App extends Component {
           onDeleteContact={this.handleDeleteContact}
         />
         <Footer />
-      </div>
+      </Wraper>
     );
   }
 }

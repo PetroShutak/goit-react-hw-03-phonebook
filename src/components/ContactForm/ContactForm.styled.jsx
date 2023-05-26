@@ -1,9 +1,9 @@
 import styled from 'styled-components';
 
 export const Container = styled.div`
-  margin: 20px;
   background-color: #f2f2f2;
   padding: 10px;
+  width: 400px;
 `;
 
 export const Form = styled.form`

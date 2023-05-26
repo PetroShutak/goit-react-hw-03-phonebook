@@ -1,15 +1,16 @@
 import { Component } from 'react';
 import PropTypes from 'prop-types';
+import { FooterStyled } from './Footer.styled';
 
 export default class Footer extends Component {
   render() {
     return (
-      <div>
+      <FooterStyled>
         <p>
           © 2023 Phonebook. All rights reserved. <br />
           Created by Petro Shutak
         </p>
-      </div>
+      </FooterStyled>
     );
   }
 }
