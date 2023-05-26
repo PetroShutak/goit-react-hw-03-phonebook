@@ -8,7 +8,8 @@ export const List = styled.ul`
 export const ListItem = styled.li`
   display: flex;
   align-items: center;
-//   justify-content: space-between;
+  gap: 10px;
+  justify-content: space-between;
   margin-bottom: 10px;
 `;
 
@@ -18,7 +19,6 @@ export const ContactName = styled.span`
 
 export const ContactNumber = styled.span`
   color: #666;
-  margin-left: 10px;
 `;
 
 export const DeleteButton = styled.button`

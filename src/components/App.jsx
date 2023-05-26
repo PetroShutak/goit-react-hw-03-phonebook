@@ -66,18 +66,23 @@ export class App extends Component {
     );
 
     return (
-      <Wraper>
-        <h1>Phonebook</h1>
-        <ContactForm contacts={contacts} onAddContact={this.handleAddContact} />
+      <>
+        <Wraper>
+          <h1>Phonebook</h1>
+          <ContactForm
+            contacts={contacts}
+            onAddContact={this.handleAddContact}
+          />
 
-        <h2>Contacts</h2>
-        <Filter value={filter} onChange={this.handleFilterChange} />
-        <ContactList
-          contacts={filteredContacts}
-          onDeleteContact={this.handleDeleteContact}
-        />
+          <h2>Contacts</h2>
+          <Filter value={filter} onChange={this.handleFilterChange} />
+          <ContactList
+            contacts={filteredContacts}
+            onDeleteContact={this.handleDeleteContact}
+          />
+        </Wraper>
         <Footer />
-      </Wraper>
+      </>
     );
   }
 }
