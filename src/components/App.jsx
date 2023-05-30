@@ -44,9 +44,10 @@ export class App extends Component {
       contacts: prevState.contacts.filter(contact => contact.id !== contactId),
     }));
   };
+  storageKey = 'contacts';
 
   componentDidMount() {
-    const savedContacts = localStorage.getItem('contacts');
+    const savedContacts = localStorage.getItem(this.storageKey);
     if (savedContacts) {
       this.setState({ contacts: JSON.parse(savedContacts) });
     }
@@ -55,7 +56,7 @@ export class App extends Component {
   componentDidUpdate(prevState) {
     const { contacts } = this.state;
     if (prevState.contacts !== contacts) {
-      localStorage.setItem('contacts', JSON.stringify(contacts));
+      localStorage.setItem(this.storageKey, JSON.stringify(contacts));
     }
   }
 
