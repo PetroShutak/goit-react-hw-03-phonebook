@@ -19,6 +19,22 @@ export class App extends Component {
     ],
     filter: '',
   };
+  
+  storageKey = 'contacts';
+
+  componentDidMount() {
+    const savedContacts = localStorage.getItem(this.storageKey);
+    if (savedContacts) {
+      this.setState({ contacts: JSON.parse(savedContacts) });
+    }
+  }
+
+  componentDidUpdate(prevState) {
+    const { contacts } = this.state;
+    if (prevState.contacts !== contacts) {
+      localStorage.setItem(this.storageKey, JSON.stringify(contacts));
+    }
+  }
 
   handleFilterChange = event => {
     this.setState({ filter: event.target.value });
@@ -44,21 +60,6 @@ export class App extends Component {
       contacts: prevState.contacts.filter(contact => contact.id !== contactId),
     }));
   };
-  storageKey = 'contacts';
-
-  componentDidMount() {
-    const savedContacts = localStorage.getItem(this.storageKey);
-    if (savedContacts) {
-      this.setState({ contacts: JSON.parse(savedContacts) });
-    }
-  }
-
-  componentDidUpdate(prevState) {
-    const { contacts } = this.state;
-    if (prevState.contacts !== contacts) {
-      localStorage.setItem(this.storageKey, JSON.stringify(contacts));
-    }
-  }
 
   render() {
     const { contacts, filter } = this.state;
